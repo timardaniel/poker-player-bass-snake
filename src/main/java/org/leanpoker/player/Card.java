@@ -5,7 +5,6 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class Card {
@@ -36,7 +35,7 @@ public class Card {
     public List<Card> getHoleCards(JsonElement request) {
 
         JsonArray cardsJson = returnPlayer(request).get("hole_cards").getAsJsonArray();
-        List<Card> cards = new ArrayList();
+        List<Card> cards = new ArrayList<>();
         for (JsonElement cardJson : cardsJson) {
             JsonObject cardObject = cardJson.getAsJsonObject();
             cards.add(new Card(cardObject.get("rank").getAsString(), cardObject.get("suit").getAsString()));
@@ -49,7 +48,7 @@ public class Card {
     public List<Card> getCommunityCards(JsonElement request) {
 
         JsonArray cardsJson = returnPlayer(request).get("community_cards").getAsJsonArray();
-        List<Card> cards = new ArrayList();
+        List<Card> cards = new ArrayList<>();
         for (JsonElement cardJson : cardsJson) {
             JsonObject cardObject = cardJson.getAsJsonObject();
             cards.add(new Card(cardObject.get("rank").getAsString(), cardObject.get("suit").getAsString()));
@@ -74,9 +73,7 @@ public class Card {
     }
 
     public static boolean isThereAPairInHand() {
-        if (Player.cardInHand.get(0).getRank().equals(Player.cardInHand.get(1).getRank()))
-            return true;
-        return false;
+        return Player.cardInHand.get(0).getRank().equals(Player.cardInHand.get(1).getRank());
     }
 
     public static int checkOccurences(String rank) {
@@ -128,8 +125,6 @@ public class Card {
 
 
     public static boolean areCardsSmall () {
-        if (Integer.parseInt(Player.cardInHand.get(0).getRank()) < 7 && Integer.parseInt(Player.cardInHand.get(1).getRank()) < 7)
-            return true;
-        return false;
+        return Integer.parseInt(Player.cardInHand.get(0).getRank()) < 7 && Integer.parseInt(Player.cardInHand.get(1).getRank()) < 7;
     }
 }
