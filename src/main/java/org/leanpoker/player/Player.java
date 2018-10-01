@@ -7,7 +7,7 @@ public class Player {
 
     public static int betRequest(JsonElement request) {
         System.out.println(request);
-        return 10;
+        return 100;
     }
 
     public static void showdown(JsonElement game) {
