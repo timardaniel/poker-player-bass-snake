@@ -1,23 +1,17 @@
 package org.leanpoker.player;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Card {
     public static ArrayList<HashMap<String, String>> holeCards = new ArrayList<>();
     public static ArrayList<HashMap<String, String>> communityCards = new ArrayList<>();
 
-    public static boolean isThereAPair() {
-        if (holeCards.get(0).get("rank").equals(holeCards.get(1).get("rank")))
-            return true;
-
-        for (HashMap<String, String> card: communityCards) {
-            if (card.get("rank").equals(holeCards.get(0).get("rank"))
-                    || card.get("rank").equals(holeCards.get(1).get("rank")))
-                return true;
-        }
-        return false;
-    }
     String suit;
     String rank;
 
@@ -69,7 +63,17 @@ public class Card {
         return player;
     }
 
-}
+    public static boolean isThereAPair() {
+        if (holeCards.get(0).get("rank").equals(holeCards.get(1).get("rank")))
+            return true;
+
+        for (HashMap<String, String> card: communityCards) {
+            if (card.get("rank").equals(holeCards.get(0).get("rank"))
+                    || card.get("rank").equals(holeCards.get(1).get("rank")))
+                return true;
+        }
+        return false;
+    }
 
 
     public static boolean areCardsSmall() {

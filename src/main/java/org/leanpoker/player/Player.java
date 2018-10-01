@@ -2,6 +2,9 @@ package org.leanpoker.player;
 
 import com.google.gson.JsonElement;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Player {
 
