@@ -125,6 +125,11 @@ public class Card {
 
 
     public static boolean areCardsSmall () {
+        if (Player.cardInHand.get(0).getRank() == "J" || Player.cardInHand.get(0).getRank() == "Q" || Player.cardInHand.get(0).getRank() == "K" || Player.cardInHand.get(0).getRank() == "A" ||
+                Player.cardInHand.get(1).getRank() == "J" || Player.cardInHand.get(1).getRank() == "Q" || Player.cardInHand.get(1).getRank() == "K" || Player.cardInHand.get(1).getRank() == "A") {
+            return false;
+        }
         return Integer.parseInt(Player.cardInHand.get(0).getRank()) < 7 && Integer.parseInt(Player.cardInHand.get(1).getRank()) < 7;
+
     }
 }

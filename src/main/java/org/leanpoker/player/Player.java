@@ -20,6 +20,7 @@ public class Player {
 
 
 
+
         if (Card.chechNumberOfCardsChance() > 0 ) {
             return 10000;
         } else {
