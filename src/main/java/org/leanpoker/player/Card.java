@@ -47,7 +47,7 @@ public class Card {
 
     public List<Card> getCommunityCards(JsonElement request) {
 
-        JsonArray cardsJson = returnPlayer(request).get("community_cards").getAsJsonArray();
+        JsonArray cardsJson = request.getAsJsonObject().get("community_cards").getAsJsonArray();
         List<Card> cards = new ArrayList<>();
         for (JsonElement cardJson : cardsJson) {
             JsonObject cardObject = cardJson.getAsJsonObject();
