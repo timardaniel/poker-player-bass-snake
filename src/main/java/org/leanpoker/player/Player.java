@@ -12,7 +12,7 @@ public class Player {
         System.err.println("Hello");
         System.err.println(jsonJavaRootObject.get("hole_cards").toString());
 */
-        return 500;
+        return 10000;
     }
 
     public static void showdown(JsonElement game) {
