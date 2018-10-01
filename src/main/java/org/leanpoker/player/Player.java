@@ -6,12 +6,11 @@ public class Player {
     static final String VERSION = "1.1";
 
     public static int betRequest(JsonElement request) {
-        System.out.println(request);
-        return 100;
+        return 50;
     }
 
     public static void showdown(JsonElement game) {
-        System.out.println("asd");
+
     }
 }
 
