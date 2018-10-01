@@ -11,7 +11,7 @@ public class Player {
         JsonObject json = request.getAsJsonObject();
         System.err.println("Hello");
         System.err.println(json.get("hole_cards"));
-        return 200;
+        return 20000;
     }
 
     public static void showdown(JsonElement game) {
